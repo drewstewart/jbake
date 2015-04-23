@@ -4,9 +4,9 @@
 
 1. Make sure you have Java 7+ JRE and that the `java` command is available in your path
 
-2. Git clone this repository to your machine, this folder will be known as `JBAKE_HOME`
+2. Git clone this repository to a folder on your machine, this folder will be known as `JBAKE_HOME`
 
-3. Open a command prompt and from `JBAKE_HOME` run `./bin/jbake - h` (or `jbake.bat -h` if you are on Windows) to confirm everything works, you should see usage help text
+3. Open a command prompt and from `JBAKE_HOME` run `./bin/jbake - h` (or `jbake.bat -h` if you are on Windows) to confirm everything works, you should see the usage help text:
 
 ```
 Jbake v2.3.2 (2014-09-20 19:20) [http://jbake.org]
@@ -27,3 +27,9 @@ This will bake the ib2b documentation and placing the exported html in the `ib2b
 ```
 $ ./bin/jbake -s ib2b_documentation/output
 ```
+
+You can preview the documentation in your browser at http://localhost:8820
+
+## The rest
+
+Go see the [Getting Started](http://localhost:8820) and [FAQ](http://localhost:8820) for details on how to add new specs, edit templates etc.
