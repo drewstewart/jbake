@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	@operation getResourceInventory
+	@action queryResourceInventory
+	@sender FLS
+	@receiver EPS
+	@scenario Query resource inventory fails - ID not found
+	@name Exception - Query resource inventory fails - ID not found
+	@description This is a sample request message for the scenario: Query resource inventory fails because the id cannot be found
+	@version V1.0
+-->
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+	xmlns:dns="http://www.nbnco.com.au/cim/manageSPInventory/v5"
+	xmlns:mhe="http://www.nbnco.com.au/cim/common/messageHeader/v3">
+	<soapenv:Header>
+		<mhe:MessageHeader>
+			<activityName>getResourceInventory</activityName>
+			<msgName>ManageSPInventorygetResourceInventoryRequest</msgName>
+			<businessServiceName>ManageSPInventory</businessServiceName>
+			<businessServiceVersion>V1.0</businessServiceVersion>
+			<msgType>Request</msgType>
+			<accessSeekerID>SDP000000000001</accessSeekerID>
+			<correlationId>4eef4405-606e-46db-8c5c-af78e2874077</correlationId>
+			<security>Placeholder Security</security>
+			<priority>6</priority>
+			<communicationPattern>RequestReply</communicationPattern>
+			<timestamp>2014-08-18T12:00:01Z</timestamp>
+			<businessChannel>Fulfilment</businessChannel>
+			<HeaderCharacteristicValue>
+				<value>FALSE</value>
+				<Characteristic>
+					<name>Mocked</name>
+				</Characteristic>
+			</HeaderCharacteristicValue>
+		</mhe:MessageHeader>
+	</soapenv:Header>
+	<soapenv:Body>
+		<dns:ManageSPInventoryRequest>
+			<SPInventory>
+				<interactionDate>2014-08-18T12:00:00.000Z</interactionDate>
+				<SPInventoryComprisedOf>
+					<!-- NSAS or NWAS -->
+					<ItemInvolvesProduct>
+						<type>NSAS</type>
+					</ItemInvolvesProduct>
+					<ReferencesSPInventoryItem>
+						<ItemInvolvesResource>
+							<ID>CSA000000000001</ID>
+							<!-- Resource Type. Allowed values for NSAS are CSA, BEAM, NTD, UNI or AVC. Allowed values for NWAS are NTD, UNI, or AVC. -->
+							<type>CSA</type>
+						</ItemInvolvesResource>
+					</ReferencesSPInventoryItem>
+				</SPInventoryComprisedOf>
+			</SPInventory>
+		</dns:ManageSPInventoryRequest>
+	</soapenv:Body>
+</soapenv:Envelope>

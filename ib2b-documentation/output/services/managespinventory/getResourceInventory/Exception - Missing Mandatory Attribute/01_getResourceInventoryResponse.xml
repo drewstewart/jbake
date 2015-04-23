@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+	@operation getResourceInventory
+	@action responseResourceInventory
+	@sender EPS
+	@receiver FLS
+	@scenario Query resource inventory fails - Missing mandatory attribute
+	@name Exception - Query resource inventory fails - Missing mandatory attribute
+	@description This is a sample response message for the scenario: Query resource inventory fails due to a missing mandatory attribute
+	@version V1.0
+-->
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:mhe="http://www.nbnco.com.au/cim/common/messageHeader/v3"
+	xmlns:exp="http://www.nbnco.com.au/cim/common/exception/v3">
+	<soapenv:Header>
+		<mhe:MessageHeader>
+			<activityName>getResourceInventory</activityName>
+			<msgName>ManageSPInventorygetResourceInventoryTechnicalException</msgName>
+			<businessServiceName>ManageSPInventory</businessServiceName>
+			<businessServiceVersion>V1.0</businessServiceVersion>
+			<msgType>Error</msgType>
+			<accessSeekerID>SDP000000000001</accessSeekerID>
+			<activityStatus>Failure</activityStatus>
+			<correlationId>4eef4405-606e-46db-8c5c-af78e2874077</correlationId>
+			<security>Placeholder Security</security>
+			<priority>6</priority>
+			<communicationPattern>RequestReply</communicationPattern>
+			<timestamp>2014-08-18T12:00:01Z</timestamp>
+			<businessChannel>Fulfilment</businessChannel>
+			<HeaderCharacteristicValue>
+				<value>FALSE</value>
+				<Characteristic>
+					<name>Mocked</name>
+				</Characteristic>
+			</HeaderCharacteristicValue>
+		</mhe:MessageHeader>
+	</soapenv:Header>
+	<soapenv:Body>
+		<soapenv:Fault>
+			<faultcode>exp:ValidationException</faultcode>
+			<faultstring>Fault String</faultstring>
+			<detail>
+				<exp:ValidationException>
+					<Exception>
+						<ID>001000</ID>
+						<description>The following mandatory field or fields are not provided: product type</description>
+						<type>Error</type>
+					</Exception>
+				</exp:ValidationException>
+			</detail>
+		</soapenv:Fault>
+	</soapenv:Body>
+</soapenv:Envelope>

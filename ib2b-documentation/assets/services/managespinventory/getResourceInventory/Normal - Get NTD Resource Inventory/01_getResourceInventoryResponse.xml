@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	@operation getResourceInventory
+	@action responseResourceInventory
+	@sender EPS
+	@receiver FLS
+	@scenario Query NTD resource inventory
+	@name Normal - Query NTD Resource Inventory
+	@description This is a sample response message for the scenario: Query NTD resource inventory is successful. This sample is relevant to both NSAS or NWAS. The EPS ICD may be referenced for details of which optional attributes are applicable to each type.
+	@version V1.0
+-->
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+	xmlns:dns="http://www.nbnco.com.au/cim/manageSPInventory/v5"
+	xmlns:mhe="http://www.nbnco.com.au/cim/common/messageHeader/v3">
+	<soapenv:Header>
+		<mhe:MessageHeader>
+			<activityName>getResourceInventory</activityName>
+			<msgName>ManageSPInventorygetResourceInventoryResponse</msgName>
+			<businessServiceName>ManageSPInventory</businessServiceName>
+			<businessServiceVersion>V1.0</businessServiceVersion>
+			<msgType>Response</msgType>
+			<accessSeekerID>SDP000000000001</accessSeekerID>
+			<activityStatus>Success</activityStatus>
+			<correlationId>4eef4405-606e-46db-8c5c-af78e2874077</correlationId>
+			<security>Placeholder Security</security>
+			<priority>6</priority>
+			<communicationPattern>RequestReply</communicationPattern>
+			<timestamp>2014-08-18T12:00:01Z</timestamp>
+			<businessChannel>Fulfilment</businessChannel>
+			<HeaderCharacteristicValue>
+				<value>FALSE</value>
+				<Characteristic>
+					<name>Mocked</name>
+				</Characteristic>
+			</HeaderCharacteristicValue>
+		</mhe:MessageHeader>
+	</soapenv:Header>
+	<soapenv:Body>
+		<dns:ManageSPInventoryResponse>
+			<SPInventory>
+				<interactionDate>2014-08-18T12:00:00.100Z</interactionDate>
+				<SPInventoryComprisedOf>
+					<!-- NSAS or NWAS -->
+					<ItemInvolvesProduct>
+						<type>NSAS</type>
+					</ItemInvolvesProduct>
+					<ReferencesSPInventoryItem>
+						<ItemInvolvesResource>
+							<ID>NTD000000000001</ID>
+							<DescribedBy>
+								<value>1 Port</value>
+								<Characteristic>
+									<ID>ntdType</ID>
+								</Characteristic>
+							</DescribedBy>
+							<DescribedBy>
+								<value>1A</value>
+								<Characteristic>
+									<ID>satelliteId</ID>
+								</Characteristic>
+							</DescribedBy>
+							<DescribedBy>
+								<value>1</value>
+								<Characteristic>
+									<ID>beamId</ID>
+								</Characteristic>
+							</DescribedBy>
+							<DescribedBy>
+								<value>1</value>
+								<Characteristic>
+									<ID>rfcId</ID>
+								</Characteristic>
+							</DescribedBy>
+							<DescribedBy>
+								<value>LOC000000000001</value>
+								<Characteristic>
+									<ID>locationId</ID>
+								</Characteristic>
+							</DescribedBy>
+							<DescribedBy>
+								<value>CSA000000000001</value>
+								<Characteristic>
+									<ID>csaId</ID>
+								</Characteristic>
+							</DescribedBy>
+							<DescribedBy>
+								<value>10</value>
+								<Characteristic>
+									<ID>terminalType</ID>
+								</Characteristic>
+							</DescribedBy>
+							<DescribedBy>
+								<value>-37.675</value>
+								<Characteristic>
+									<ID>latitude</ID>
+								</Characteristic>
+							</DescribedBy>
+							<DescribedBy>
+								<value>144.8</value>
+								<Characteristic>
+									<ID>longitude</ID>
+								</Characteristic>
+							</DescribedBy>
+							<DescribedBy>
+								<value>PENDING</value>
+								<Characteristic>
+									<ID>ntdState</ID>
+								</Characteristic>
+							</DescribedBy>
+							<DescribedBy>
+								<value>NEW INSTALLATION</value>
+								<Characteristic>
+									<ID>ntdStateDescription</ID>
+								</Characteristic>
+							</DescribedBy>
+							<DescribedBy>
+								<value>FLS or Ericsson to provide sample value</value>
+								<Characteristic>
+									<ID>hardwareVersion</ID>
+								</Characteristic>
+							</DescribedBy>
+							<DescribedBy>
+								<value>FLS or Ericsson to provide sample value</value>
+								<Characteristic>
+									<ID>firmwareVersion</ID>
+								</Characteristic>
+							</DescribedBy>
+							<DescribedBy>
+								<value>FLS or Ericsson to provide sample value</value>
+								<Characteristic>
+									<ID>ntdMacAddress</ID>
+								</Characteristic>
+							</DescribedBy>
+							<DescribedBy>
+								<value>In-door Unit Serial Number</value>
+								<Characteristic>
+									<ID>iduSerialNumber</ID>
+								</Characteristic>
+							</DescribedBy>
+							<DescribedBy>
+								<value>Out-door Unit Serial Number</value>
+								<Characteristic>
+									<ID>oduSerialNumber</ID>
+								</Characteristic>
+							</DescribedBy>
+							<DescribedBy>
+								<value>AC</value>
+								<Characteristic>
+									<ID>ntdPowerType</ID>
+								</Characteristic>
+							</DescribedBy>
+							<!-- Either 80 cm, 120 cm or 180 cm -->
+							<DescribedBy>
+								<value>180 cm</value>
+								<Characteristic>
+									<ID>oduAntennaSize</ID>
+								</Characteristic>
+							</DescribedBy>
+							<!-- Either 3W or 6W -->
+							<DescribedBy>
+								<value>6W</value>
+								<Characteristic>
+									<ID>oduTriaType</ID>
+								</Characteristic>
+							</DescribedBy>
+							<DescribedBy>
+								<value>FLS or Ericsson to provide sample value</value>
+								<Characteristic>
+									<ID>oduMountType</ID>
+								</Characteristic>
+							</DescribedBy>
+							<DescribedBy>
+								<value>FLS or Ericsson to provide sample value</value>
+								<Characteristic>
+									<ID>ntdInstallationKey</ID>
+								</Characteristic>
+							</DescribedBy>
+							<DescribedBy>
+								<value>LHCP</value>
+								<Characteristic>
+									<ID>polarisation</ID>
+								</Characteristic>
+							</DescribedBy>
+							<DescribedBy>
+								<value>FLS or Ericsson to provide sample value</value>
+								<Characteristic>
+									<ID>qoiStatus</ID>
+									<type>NTD QoI Data</type>
+								</Characteristic>
+							</DescribedBy>
+							<DescribedBy>
+								<value>FLS or Ericsson to provide sample value</value>
+								<Characteristic>
+									<ID>oduStatus</ID>
+									<type>NTD QoI Data</type>
+								</Characteristic>
+							</DescribedBy>
+							<DescribedBy>
+								<value>FLS or Ericsson to provide sample value</value>
+								<Characteristic>
+									<ID>rlSymbolRate</ID>
+									<type>NTD QoI Data</type>									
+								</Characteristic>
+							</DescribedBy>
+							<DescribedBy>
+								<value>FLS or Ericsson to provide sample value</value>
+								<Characteristic>
+									<ID>minRlSymbolRate</ID>
+									<type>NTD QoI Data</type>									
+								</Characteristic>
+							</DescribedBy>
+							<DescribedBy>
+								<value>FLS or Ericsson to provide sample value</value>
+								<Characteristic>
+									<ID>flSnr</ID>
+									<type>NTD QoI Data</type>									
+								</Characteristic>
+							</DescribedBy>
+							<DescribedBy>
+								<value>FLS or Ericsson to provide sample value</value>
+								<Characteristic>
+									<ID>maxFlSnr</ID>
+									<type>NTD QoI Data</type>									
+								</Characteristic>
+							</DescribedBy>
+							<DescribedBy>
+								<value>FLS or Ericsson to provide sample value</value>
+								<Characteristic>
+									<ID>minFlSnr</ID>
+									<type>NTD QoI Data</type>									
+								</Characteristic>
+							</DescribedBy>
+							<DescribedBy>
+								<value>FLS or Ericsson to provide sample value</value>
+								<Characteristic>
+									<ID>iflCableLoss</ID>
+									<type>NTD QoI Data</type>									
+								</Characteristic>
+							</DescribedBy>
+							<DescribedBy>
+								<value>FLS or Ericsson to provide sample value</value>
+								<Characteristic>
+									<ID>maxIflCableLoss</ID>
+									<type>NTD QoI Data</type>									
+								</Characteristic>
+							</DescribedBy>
+							<DescribedBy>
+								<value>FLS or Ericsson to provide sample value</value>
+								<Characteristic>
+									<ID>minIflCableLoss</ID>
+									<type>NTD QoI Data</type>									
+								</Characteristic>
+							</DescribedBy>
+							<DescribedBy>
+								<value>FLS or Ericsson to provide sample value</value>
+								<Characteristic>
+									<ID>iflCableConsistency</ID>
+									<type>NTD QoI Data</type>									
+								</Characteristic>
+							</DescribedBy>
+							<DescribedBy>
+								<value>FLS or Ericsson to provide sample value</value>
+								<Characteristic>
+									<ID>maxIflCableConsistency</ID>
+									<type>NTD QoI Data</type>									
+								</Characteristic>
+							</DescribedBy>
+							<DescribedBy>
+								<value>FLS or Ericsson to provide sample value</value>
+								<Characteristic>
+									<ID>minIflCableConsistency</ID>
+									<type>NTD QoI Data</type>									
+								</Characteristic>
+							</DescribedBy>
+							<DescribedBy>
+								<value>FLS or Ericsson to provide sample value</value>
+								<Characteristic>
+									<ID>iflCableResistance</ID>
+									<type>NTD QoI Data</type>									
+								</Characteristic>
+							</DescribedBy>
+							<DescribedBy>
+								<value>FLS or Ericsson to provide sample value</value>
+								<Characteristic>
+									<ID>maxIflCableResistance</ID>
+									<type>NTD QoI Data</type>									
+								</Characteristic>
+							</DescribedBy>
+							<DescribedBy>
+								<value>FLS or Ericsson to provide sample value</value>
+								<Characteristic>
+									<ID>minIflCableResistance</ID>
+									<type>NTD QoI Data</type>									
+								</Characteristic>
+							</DescribedBy>
+							<DescribedBy>
+								<value>FLS or Ericsson to provide sample value</value>
+								<Characteristic>
+									<ID>actionCode</ID>
+									<type>NTD QoI Data</type>									
+								</Characteristic>
+							</DescribedBy>
+							<DescribedBy>
+								<value>1.1.1.1</value>
+								<Characteristic>
+									<ID>ntdIpAddress</ID>
+								</Characteristic>
+							</DescribedBy>
+							<!-- Vendor Model Number -->
+							<DescribedBy>
+								<value>301547</value>
+								<Characteristic>
+									<ID>ntdModel</ID>
+								</Characteristic>
+							</DescribedBy>
+							<DescribedBy>
+								<value>V1</value>
+								<Characteristic>
+									<ID>ntdVersion</ID>
+								</Characteristic>
+							</DescribedBy>
+							<DescribedBy>
+								<value>16dBi</value>
+								<Characteristic>
+									<ID>ntdAntenna</ID>
+								</Characteristic>
+							</DescribedBy>
+							<DescribedBy>
+								<value>23dBm</value>
+								<Characteristic>
+									<ID>ntdPower</ID>
+								</Characteristic>
+							</DescribedBy>
+							<!-- International Mobile Station Equipment Identity. Uniquely identifies Wireless NTD Outdoor Unit. 15 digit numeric. -->
+							<DescribedBy>
+								<value>358944041231611</value>
+								<Characteristic>
+									<ID>imei</ID>
+								</Characteristic>
+							</DescribedBy>
+							<!-- International Mobile Subscriber Identity. Uniquely identifies the SIM card on the Wireless NTD. 15 digit numeric. -->
+							<DescribedBy>
+								<value>505626260023732</value>
+								<Characteristic>
+									<ID>imsi</ID>
+								</Characteristic>
+							</DescribedBy>
+							<!-- Wireless Topology Cell Id that was actually used to configure the NTD. Cell to be in ECGI format. -->
+							<DescribedBy>
+								<value>50562179402499</value>
+								<Characteristic>
+									<ID>cellId</ID>
+								</Characteristic>
+							</DescribedBy>
+							<!-- Physical Cell Identifier of the Wireless Topology Cell actually used to configure the NTD. The pci is not globally unique. Integer between 0 and 503. -->
+							<DescribedBy>
+								<value>503</value>
+								<Characteristic>
+									<ID>pci</ID>
+								</Characteristic>
+							</DescribedBy>
+							<type>NTD</type>
+						</ItemInvolvesResource>
+						
+						<ReferencesSPInventoryItem>
+							<!-- UNI details configured on NTD -->
+							<ItemInvolvesResource>
+								<ID>UNI000000000001</ID>
+								<DescribedBy>
+									<value>1</value>
+									<Characteristic>
+										<ID>portNumber</ID>
+									</Characteristic>
+								</DescribedBy>
+								<DescribedBy>
+									<value>BLOCKED</value>
+									<Characteristic>
+										<ID>uniState</ID>
+									</Characteristic>
+								</DescribedBy>
+								<DescribedBy>
+									<value>NEW</value>
+									<Characteristic>
+										<ID>uniStateDescription</ID>
+									</Characteristic>
+								</DescribedBy>
+								<DescribedBy>
+									<value>DEFAULT_MAPPED</value>
+									<Characteristic>
+										<ID>interfaceMode</ID>
+									</Characteristic>
+								</DescribedBy>
+								<DescribedBy>
+									<value>TEN_MBPS</value>
+									<Characteristic>
+										<ID>ethernetRate</ID>
+									</Characteristic>
+								</DescribedBy>
+								<DescribedBy>
+									<value>HALF</value>
+									<Characteristic>
+										<ID>ethernetDuplex</ID>
+									</Characteristic>
+								</DescribedBy>
+								<!-- DSCP-Mapped, Default-Mapped,  Priority-Tagged, Tagged -->
+								<DescribedBy>
+									<value>DSCP-Mapped</value>
+									<Characteristic>
+										<ID>vlanMode</ID>
+									</Characteristic>
+								</DescribedBy>
+								<!-- 100Mbps, Auto Duplex (Half/Full) OR Auto Negotiation -->
+								<DescribedBy>
+									<value>Auto Negotiation</value>
+									<Characteristic>
+										<ID>speedAndDuplex</ID>
+									</Characteristic>
+								</DescribedBy>
+								<DescribedBy>
+									<value>FAULTED</value>
+									<Characteristic>
+										<ID>portOpStatus</ID>
+									</Characteristic>
+								</DescribedBy>
+								<type>UNID</type>
+							</ItemInvolvesResource>
+							<!--  AVC details configured on NTD -->
+							<ItemInvolvesService>
+								<ID>AVC000000000001</ID>
+								<DescribedBy>
+									<value>CVC000000000001</value>
+									<Characteristic>
+										<ID>cvcId</ID>
+									</Characteristic>
+								</DescribedBy>
+								<DescribedBy>
+									<value>FLS or Ericsson to provide sample value</value>
+									<Characteristic>
+										<ID>lineId</ID>
+									</Characteristic>
+								</DescribedBy>
+								<DescribedBy>
+									<value>True</value>
+									<Characteristic>
+										<ID>enableEncryption</ID>
+									</Characteristic>
+								</DescribedBy>
+								<DescribedBy>
+									<value>1</value>
+									<Characteristic>
+										<ID>uniVlan</ID>
+									</Characteristic>
+								</DescribedBy>
+								<DescribedBy>
+									<value>Bandwidth 1 (FLS or Ericsson to provide sample value)</value>
+									<Characteristic>
+										<ID>bandwidthProfile</ID>
+									</Characteristic>
+								</DescribedBy>
+								<DescribedBy>
+									<value>Bandwidth 2 (FLS or Ericsson to provide sample value)</value>
+									<Characteristic>
+										<ID>bandwidthProfile</ID>
+									</Characteristic>
+								</DescribedBy>
+								<DescribedBy>
+									<value>Bandwidth X (FLS or Ericsson to provide sample value)</value>
+									<Characteristic>
+										<ID>bandwidthProfile</ID>
+									</Characteristic>
+								</DescribedBy>
+								<DescribedBy>
+									<value>1</value>
+									<Characteristic>
+										<ID>sTagVid</ID>
+									</Characteristic>
+								</DescribedBy>
+								<DescribedBy>
+									<value>I-NNI S-TAG</value>
+									<Characteristic>
+										<ID>sVlanid</ID>
+									</Characteristic>
+								</DescribedBy>
+								<DescribedBy>
+									<value>ACTIVATED</value>
+									<Characteristic>
+										<ID>avcState</ID>
+									</Characteristic>
+								</DescribedBy>
+								<DescribedBy>
+									<value>NEW</value>
+									<Characteristic>
+										<ID>avcStateDescription</ID>
+									</Characteristic>
+								</DescribedBy>
+								<DescribedBy>
+									<value>UNICAST</value>
+									<Characteristic>
+										<ID>uniCastAvcType</ID>
+									</Characteristic>
+								</DescribedBy>
+								<DescribedBy>
+									<value>NO_ACCELERATION</value>
+									<Characteristic>
+										<ID>tpepConfiguration</ID>
+									</Characteristic>
+								</DescribedBy>
+								<DescribedBy>
+									<value>MLD_V2</value>
+									<Characteristic>
+										<ID>igmpVersion</ID>
+									</Characteristic>
+								</DescribedBy>
+								<DescribedBy>
+									<value>I-NNI CTAG</value>
+									<Characteristic>
+										<ID>cVlanId</ID>
+									</Characteristic>
+								</DescribedBy>
+								<DescribedBy>
+									<value>FLS or Ericsson to provide sample value</value>
+									<Characteristic>
+										<ID>cTagVid</ID>
+									</Characteristic>
+								</DescribedBy>
+								<DescribedBy>
+									<value>I-NNI CTAG</value>
+									<Characteristic>
+										<ID>cVlanId</ID>
+									</Characteristic>
+								</DescribedBy>
+								<DescribedBy>
+									<value>ACTIVE</value>
+									<Characteristic>
+										<ID>serviceOpStatus</ID>
+									</Characteristic>
+								</DescribedBy>
+								<DescribedBy>
+									<value>2014-08-18T12:00:01.400Z</value>
+									<Characteristic>
+										<ID>serviceDateTimeUpdated</ID>
+									</Characteristic>
+								</DescribedBy>
+								<type>AVCD</type>
+							</ItemInvolvesService>
+						</ReferencesSPInventoryItem>
+					</ReferencesSPInventoryItem>
+				</SPInventoryComprisedOf>
+			</SPInventory>
+		</dns:ManageSPInventoryResponse>
+	</soapenv:Body>
+</soapenv:Envelope>

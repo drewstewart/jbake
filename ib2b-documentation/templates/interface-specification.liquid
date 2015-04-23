@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+	{% include "header" %}
+	
+	<body onload="prettyPrint()">
+	<div id="wrap">
+
+		{% include "nav-menu" %}
+		
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="page-header">
+						<h1>Interface Functional Specification</h1>
+						<h1>{{ content.title }}</h1>
+						<h1>Business Service</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+		
+					{{ content.body }}
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	</body>
+</html>
