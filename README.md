@@ -2,11 +2,13 @@
 
 ## Installation
 
-1. Make sure you have Java 7+ JRE and that the `java` command is available in your path
+1. Make sure you have Java 7+ JRE and that the `java` command is available in your path (go download JRE from [Oracle](http://www.oracle.com/technetwork/java/javase/downloads/index.html))
 
-2. Git clone this repository to a folder on your machine, this folder will be known as `JBAKE_HOME`
+2. Git clone this repository to a folder on your machine, we'll refer to this folder as `NBN_JBAKE_HOME` in this guide
 
-3. Open a command prompt and from `JBAKE_HOME` run `./bin/jbake - h` (or `jbake.bat -h` if you are on Windows) to confirm everything works, you should see the usage help text:
+3. Add `NBN_JBAKE_HOME/bin` to your path environment variable
+
+3. Open a command prompt and run `./bin/jbake - h` (or `jbake.bat -h` if you are on Windows) to confirm everything works, you should see the usage help text:
 
 ```
 Jbake v2.3.2 (2014-09-20 19:20) [http://jbake.org]
@@ -38,6 +40,7 @@ Once you have the server running go see [Getting Started](http://localhost:8820/
 
 1. This is a maven project. Import it into your IDE (IntelliJ if you appreciate a real IDE, Eclipse if you dont').
 2. Add `/lib/liqp-0.6.1.jar` as a project dependency. Its not hosted on maven central, you could add it to a local mavan repository but thats for you to google.
+3. You will need to provide the document project path as a runtime argument or it will explode. Alternatively, -h for help or -s for server mode.
 3. Make -> Run
 
 ## Updating the runtime
@@ -45,3 +48,7 @@ Once you have the server running go see [Getting Started](http://localhost:8820/
 So you've made some changes to the src, everything compiles locally and you're ready to share with everyone else. The scripts in `/bin` load the jar `lib/jbake-core.jar`. You must export a jar with the same name to `/lib` from your IDE to update the runtime. All the lib dependencies are also stored in `/lib` so make sure you generate a manifest with the classpath set correctly to reference these dependencies (unpack the current jar and check out `META-INF/MANIFEST.MF` for an example if you get stuck).
 
 Check in your both your src and the updated runtime.
+
+## TODO
+
+- Add Helvetica-Neue fontface to assets so not dependent on users having it installed. Fonts revert back to Helvetica if not present
