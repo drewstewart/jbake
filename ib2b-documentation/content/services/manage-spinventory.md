@@ -3,7 +3,7 @@ version=1.1.15
 date=2015-20-04
 type=interface-specification
 status=published
-~~~~~~
+~~~~~~~~
 
 # Document Control
 

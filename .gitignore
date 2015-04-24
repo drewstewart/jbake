@@ -5,6 +5,8 @@
 /target
 /dist
 /out
+/i2b2-documentation/output
+/output
 /.idea
 *.iml
 *.class
