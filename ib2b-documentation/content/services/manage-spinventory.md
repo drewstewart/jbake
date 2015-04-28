@@ -3,11 +3,11 @@ version=1.1.15
 date=2015-20-04
 type=interface-specification
 status=published
-~~~~~~~~
+~~~~~~
 
 # Document Control
 
-This document represents a view of the service model from Rational Software Architect. This specification is intended bo read-only and any chnages must be made within the service model.
+This document represents a view of the service model from Rational Software Architect. This specification is intended bo read-only and any changes must be made within the service model.
 
 **Title** - Interface Functional Specification: ManageSPInventory
 
@@ -19,6 +19,7 @@ This document represents a view of the service model from Rational Software Arch
 | V0.2    | 2014/09/08 | Updates based on review feedback for first draft. |
 | V0.3    | 2014/09/24 | Candidate for IR12 base-lining. Updates based on review feedback for 2nd draft, including removal of most 'TBD' comments. Spec and samples are assumed to agreed 'as-is'. |
 | V0.4    | 2014/10/28 | Initial IR13 changes based on EPS ICD v1.3. <ul><li>Categorised valid resource types for Satellite and Wireless.</li><li>Sample data for oduAntennaSize (either 80cm, 120cm or 180cm), oduTrialType (either 3W or 6W)</li></ul> |
+| V0.3 | 201/5.4.13k| etc etc |
 
 {% include "introduction.md" %}
 

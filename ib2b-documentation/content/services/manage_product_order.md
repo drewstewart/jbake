@@ -7,9 +7,9 @@ status=published
 
 # Document Control
 
-This document represents a view of the service model from Rational Software Architect. This specification is intended bo read-only and any chnages must be made within the service model.
+This document represents a view of the service model from Rational Software Architect. This specification is intended to be read-only and any chnages must be made within the service model.
 
-**Title** - Interface Functional Specification: ManageSPInventory
+**Title** - Interface Functional Specification: Manage Product Order
 
 ## Revision History
 
