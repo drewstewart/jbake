@@ -1,6 +1,7 @@
 title=Getting Started
 type=page
 status=published
+version=current
 ~~~~~~
 
 # The Basics
@@ -86,3 +87,22 @@ Note that templates only need to be changed when updating the documentation outp
 ### Which template is used
 
 ### Liquid syntax
+
+
+- howto add new document type
+# Customising the markdown html output
+
+In the `org.jbake.parser` package there is the `MarkdownEngine` class. It contains an inner class `MyHtmlSerializer` - this is where you override the `public void visit(NodeType node)` method to customise how each node is rendered to html. For example:
+
+```
+// Override how Tables are rendered
+@Override
+public void visit(TableNode node) {
+    this.currentTableNode = node;
+    this.printIndentedTag(node, "table class="table table-bordered table-striped\"");
+    this.currentTableNode = null;
+}
+```
+
+`MyHtmlSerializer` extends `ToHtmlSerializer`, see the decompiled class for examples on how other tags are handled and override as needed.
+
