@@ -126,14 +126,16 @@ public class Parser {
 
     private void processIncludes(List<String> fileContents, File file) {
 
-        // regex to match {{ include "filename" }}
-        // orig regex is \s*\{\{\s*include\s\"(\w+)\"\s*\}\}\s* (try at http://www.regexplanet.com/advanced/java/index.html)
+        // regex to match:
+        // {% include "filename.md" %}
+        // {% include "../filename.md %}
+        // orig regex is \s*\{\%\s*include\s\"([\w.\/]+)\"\s*\%\}\s* (try at http://www.regexplanet.com/advanced/java/index.html)
 
-        Pattern pattern = Pattern.compile("\\s*\\{\\%\\s*include\\s\\\"([\\w\\\\\\.]+)\\\"\\s*\\%\\}\\s*");
-        // look for {{ include 'file' }} tags
-//        for (Iterator<String> iter = fileContents.iterator(); iter.hasNext();) {
+        Pattern pattern = Pattern.compile("\\s*\\{\\%\\s*include\\s\\\"([\\w.\\/]+)\\\"\\s*\\%\\}\\s*");
+        // look for {% include 'file' %} tags
+
         for (int i = 0; i < fileContents.size(); i++) {
-//            String line = iter.next();
+
             String line = fileContents.get(i);
 
             Matcher matcher = pattern.matcher(line);
@@ -151,7 +153,7 @@ public class Parser {
                     // pad
                     padContent(includeContents);
                     // insert into fileContents
-                    // use transclusion - replace the {{ include 'file' }} tag with our new one
+                    // use transclusion - replace the {% include 'file' %} tag with our new one
                     fileContents.remove(i);
                     fileContents.addAll(i, includeContents);
                 }

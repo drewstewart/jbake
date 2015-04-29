@@ -202,8 +202,13 @@ public class Oven {
                 */
                 // copy assets
                 Asset asset = new Asset(source, destination, config);
-                asset.copy(assetsPath);
+//                asset.copy(assetsPath);
+                asset.copy(assetsPath, config.getString(ConfigUtil.Keys.ASSET_FOLDER));
                 errors.addAll(asset.getErrors());
+
+                // copy assets from within content
+                asset.copy(contentsPath, config.getString(ConfigUtil.Keys.CONTENT_FOLDER));
+//                errors.addAll(asset.getErrors());
 
                 LOGGER.info("Baking finished!");
                 long end = new Date().getTime();

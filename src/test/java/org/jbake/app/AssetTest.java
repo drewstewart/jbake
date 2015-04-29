@@ -31,7 +31,7 @@ public class AssetTest {
 		URL assetsUrl = this.getClass().getResource("/assets");
 		File assets = new File(assetsUrl.getFile());
 		Asset asset = new Asset(assets.getParentFile(), folder.getRoot(), config);
-		asset.copy(assets);
+		asset.copy(assets, config.getString(ConfigUtil.Keys.ASSET_FOLDER));
 		
 		File cssFile = new File(folder.getRoot().getPath() + File.separatorChar + "css" + File.separatorChar + "bootstrap.min.css");
 		Assert.assertTrue(cssFile.exists());
@@ -47,7 +47,7 @@ public class AssetTest {
 		URL assetsUrl = this.getClass().getResource("/media");
 		File assets = new File(assetsUrl.getFile());
 		Asset asset = new Asset(assets.getParentFile(), folder.getRoot(), config);
-		asset.copy(assets);
+		asset.copy(assets,config.getString(ConfigUtil.Keys.ASSET_FOLDER));
 		
 		File favFile = new File(folder.getRoot().getPath() + File.separatorChar + "favicon.ico");
 		Assert.assertTrue(favFile.exists());

@@ -21,7 +21,6 @@ Separate your paragraphs with newlines. Create a list:
 ```
 
 
-![jBake pipeline](/img/jbake-pipeline.png)
 
 
 ## iB2B Project Structure

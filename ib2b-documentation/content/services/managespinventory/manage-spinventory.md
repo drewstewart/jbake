@@ -21,7 +21,7 @@ This document represents a view of the service model from Rational Software Arch
 | V0.4    | 2014/10/28 | Initial IR13 changes based on EPS ICD v1.3. <ul><li>Categorised valid resource types for Satellite and Wireless.</li><li>Sample data for oduAntennaSize (either 80cm, 120cm or 180cm), oduTrialType (either 3W or 6W)</li></ul> |
 | V0.3 | 201/5.4.13k| etc etc |
 
-{% include "introduction.md" %}
+{% include "../introduction.md" %}
 
 # Service Description
 
@@ -48,8 +48,8 @@ This service provides operations which allow Fulfilment to retrieve inventory de
 
 **Query network inventory fails - ID not found**
 
- - This is a sample request message for the scenario: Query network inventory fails because the id cannot be found. [Exception - ID Not Found](/services/managespinventory/getNetworkInventory/Exception_ID_Not_Found/00_getNetworkInventoryRequest.xml)
- - This is a sample response message for the scenario: Query network inventory fails because the id cannot be found. [Exception - ID Not Found](/services/managespinventory/getNetworkInventory/Exception_ID_Not_Found/00_getNetworkInventoryRequest.xml)
+ - This is a sample request message for the scenario: Query network inventory fails because the id cannot be found. [Exception - ID Not Found](./samples/getNetworkInventory/Exception_ID_Not_Found/00_getNetworkInventoryRequest.xml)
+ - This is a sample response message for the scenario: Query network inventory fails because the id cannot be found. [Exception - ID Not Found](./samples/getNetworkInventory/Exception_ID_Not_Found/00_getNetworkInventoryRequest.xml)
 
 # Appendix A
 

@@ -44,16 +44,16 @@ public class Asset {
 	 * 
 	 * @param path	The starting path
 	 */
-	public void copy(File path) {
+	public void copy(File path, String replacementPath) {
 		File[] assets = path.listFiles();
 		if (assets != null) {
 			Arrays.sort(assets);
 			for (int i = 0; i < assets.length; i++) {
-				if (assets[i].isFile()) {
+				if (assets[i].isFile() && !assets[i].getName().contains(".md")) {
 					StringBuilder sb = new StringBuilder();
 					sb.append("Copying [" + assets[i].getPath() + "]...");
 					File sourceFile = assets[i];
-					File destFile = new File(sourceFile.getPath().replace(source.getPath()+File.separator+config.getString(ConfigUtil.Keys.ASSET_FOLDER), destination.getPath()));
+					File destFile = new File(sourceFile.getPath().replace(source.getPath() + File.separator + replacementPath, destination.getPath()));
 					try {
 						FileUtils.copyFile(sourceFile, destFile);
 						sb.append("done!");
@@ -67,7 +67,7 @@ public class Asset {
 				} 
 				
 				if (assets[i].isDirectory()) {
-					copy(assets[i]);
+					copy(assets[i], replacementPath);
 				}
 			}
 		}
