@@ -21,7 +21,9 @@ Separate your paragraphs with newlines. Create a list:
 - Another item
 ```
 
+### Editing documents
 
+Assuming you're in the folder where you extracted the nbn-jbake zip you will find all the documents in `ib2b-documentation/content`.
 
 
 ## iB2B Project Structure
@@ -88,7 +90,7 @@ Note that templates only need to be changed when updating the documentation outp
 
 ### Liquid syntax
 
-## Adding a new document type
+### Adding a new document type
 
 The `type` field in the markdown metadata header determines which template is used to render the content. Additionally, types implicitly create categories that templates such as index.liquid can use to output all the links to documents of a particular type; for example "interface-specification".
 
@@ -106,7 +108,7 @@ template.interface-specification.file=interface-specification.liquid
 template.archive.file=archive.liquid
 ```
 
-In your liquid templates you can do a lookup for all published documents of a particular type using 'published_<document type>s' (yes, thats pluralised). For example:
+In your liquid templates you can do a lookup for all published documents of a particular type using 'published_{document type}s' (yes, thats pluralised). For our 'archive' example:
 
 ```
 {% for doc in published_archives %}
@@ -114,7 +116,7 @@ In your liquid templates you can do a lookup for all published documents of a pa
 {% endfor %}
 ```
 
-## Customising the markdown html output
+### Customising the markdown html output
 
 In the `org.jbake.parser` package there is the `MarkdownEngine` class. It contains an inner class `MyHtmlSerializer` - you can override the `public void visit(NodeType node)` method to customise how each node type is rendered to html. 
 
@@ -129,6 +131,8 @@ public void visit(TableNode node) {
     this.currentTableNode = null;
 }
 ```
+
+In the above snippet table nodes are rendered with the class attribute to target those elements with Bootstrap styles.
 
 `MyHtmlSerializer` extends `ToHtmlSerializer`, see the decompiled class for examples on how other tags are handled and override as needed.
 

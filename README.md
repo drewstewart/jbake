@@ -18,7 +18,7 @@ Usage: jbake...
 
 ## Generating iB2B documents
 
-From `JBAKE_HOME` run the following commands:
+All documentation content is stored in the `JBAKE_HOME\ib2b-documentation` path. From `JBAKE_HOME` run the following commands:
 
 ```
 $ ./bin/jbake ib2b-documentation
