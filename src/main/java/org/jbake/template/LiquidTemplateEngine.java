@@ -95,13 +95,10 @@ public class LiquidTemplateEngine extends AbstractTemplateEngine {
                         return new Date();
                     }
 
-                    if ("published_specs".equals(key)) {
-                        List<ODocument> query = db.getPublishedSpecs(); //query(new OSQLSynchQuery<ODocument>("select * from page where status='published' order by date desc"));
-                        LinkedList<Map<String,Object>> specs = DocumentList.wrap(query.iterator());
-                        for (Map<String, Object> s : specs) {
-                            System.out.println("found :" + s.get("title"));
-                        }
-                        return DocumentList.wrap(query.iterator());
+                    if (((String)key).contains("published_")) {
+                        String docType = ((String)key).substring("published_".length(), ((String)key).length()-1);
+                        System.out.println("docType is" + docType);
+                        return DocumentList.wrap(db.getPublishedContent(docType).iterator());
                     }
                 }
 

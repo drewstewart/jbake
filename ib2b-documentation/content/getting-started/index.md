@@ -88,8 +88,10 @@ Note that templates only need to be changed when updating the documentation outp
 
 ### Liquid syntax
 
+# Adding a new document type
 
-- howto add new document type
+Document types are used to determine which template is used to render a markdown file. Additionally, types implicitly create categories that templates like index.liquid can use to output all the links to documents of type "interface-specification" for example.
+
 # Customising the markdown html output
 
 In the `org.jbake.parser` package there is the `MarkdownEngine` class. It contains an inner class `MyHtmlSerializer` - this is where you override the `public void visit(NodeType node)` method to customise how each node is rendered to html. For example:
@@ -105,4 +107,6 @@ public void visit(TableNode node) {
 ```
 
 `MyHtmlSerializer` extends `ToHtmlSerializer`, see the decompiled class for examples on how other tags are handled and override as needed.
+
+
 

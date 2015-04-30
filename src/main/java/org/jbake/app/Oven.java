@@ -6,12 +6,10 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import com.orientechnologies.orient.core.Orient;
-import com.orientechnologies.orient.core.db.document.ODatabaseDocumentTx;
 import com.orientechnologies.orient.core.record.impl.ODocument;
 
 import org.apache.commons.configuration.CompositeConfiguration;
@@ -159,15 +157,6 @@ public class Oven {
                 }
 
                 /*
-                // write feed file
-//                if (config.getBoolean(Keys.RENDER_FEED)) {
-//                        try {
-//                                renderer.renderFeed(config.getString(Keys.FEED_FILE));
-//                        } catch (Exception e) {
-//                                errors.add(e.getMessage());
-//                        }
-//                }
-
                 // write sitemap file
                 if (config.getBoolean(Keys.RENDER_SITEMAP)) {
                         try {
@@ -177,38 +166,34 @@ public class Oven {
                         }
                 }
 
-                // write master archive file
-//                if (config.getBoolean(Keys.RENDER_ARCHIVE)) {
-//                        try {
-//                                renderer.renderArchive(config.getString(Keys.ARCHIVE_FILE));
-//                        } catch (Exception e) {
-//                                errors.add(e.getMessage());
-//                        }
-//                }
-
                 // write tag files
-//                if (config.getBoolean(Keys.RENDER_TAGS)) {
-//                        try {
-//                                renderer.renderTags(crawler.getTags(), config.getString(Keys.TAG_PATH));
-//                        } catch (Exception e) {
-//                                errors.add(e.getMessage());
-//                        }
-//                }
+                if (config.getBoolean(Keys.RENDER_TAGS)) {
+                        try {
+                                renderer.renderTags(crawler.getTags(), config.getString(Keys.TAG_PATH));
+                        } catch (Exception e) {
+                                errors.add(e.getMessage());
+                        }
+                }
+                */
 
                 // mark docs as rendered
                 for (String docType : DocumentTypes.getDocumentTypes()) {
-                        db.markConentAsRendered(docType);
+                        db.markContentAsRendered(docType);
                 }
-                */
+
                 // copy assets
                 Asset asset = new Asset(source, destination, config);
-//                asset.copy(assetsPath);
+
+                // copy styling assets (js, css, fonts, img)
                 asset.copy(assetsPath, config.getString(ConfigUtil.Keys.ASSET_FOLDER));
                 errors.addAll(asset.getErrors());
 
                 // copy assets from within content
+                // will copy any non-markdown file into the output directory.
+                // so you can put all content related to a service in a single path
+                // and include/reference it using relative paths
                 asset.copy(contentsPath, config.getString(ConfigUtil.Keys.CONTENT_FOLDER));
-//                errors.addAll(asset.getErrors());
+                errors.addAll(asset.getErrors());
 
                 LOGGER.info("Baking finished!");
                 long end = new Date().getTime();

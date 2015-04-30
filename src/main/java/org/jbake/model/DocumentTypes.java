@@ -5,8 +5,8 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 /**
- * Utility class used to determine the list of document types. Currently only supports "page", "post", "index",
- * "archive" and "feed".
+ * Utility class used to determine the list of document types. Currently only supports "page", "index",
+ * "interface-specification".
  * <p/>
  * Additional document types are added at runtime based on the types found in the configuration.
  *
