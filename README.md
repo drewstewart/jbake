@@ -52,3 +52,14 @@ Check in your both your src and the updated runtime.
 ## TODO
 
 - Add Helvetica-Neue fontface to assets so not dependent on users having it installed. Fonts revert back to Helvetica if not present
+
+- Add support for parsing PlantUML diagram blocks within documents. You should be able to do something like this inside a markdown document:
+
+```
+@startuml
+Alice -> Bob: Authentication Request
+Bob --> Alice: Authentication Response
+@enduml
+```
+
+Just as we do for processing includes, parse the document looking for @startuml tags, strip out the content, generate an image and replace the original content with a relative reference to the newly generated image. This must be done before passing to the markdown parser. See org.jbake.app.Parser.processFile method.
