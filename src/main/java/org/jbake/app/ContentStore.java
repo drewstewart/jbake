@@ -97,6 +97,10 @@ public class ContentStore {
         return query("select * from post where status='published' where ? in tags order by date desc", tag);
     }
 
+    public List<ODocument> getPublishedContentByTag(String docType, String tag) {
+        return query("select * from " + docType + " where status='published' where ? in tags order by date desc", tag);
+    }
+
     public List<ODocument> getPublishedPages() {
         return getPublishedContent("page");
     }
@@ -109,6 +113,10 @@ public class ContentStore {
         return query("select * from " + docType + " where status='published' order by date desc");
     }
 
+    public List<ODocument> getDraftContent(String docType) {
+        return query("select * from " + docType + " where status='draft' order by date desc");
+    }
+
     public List<ODocument> getAllContent(String docType) {
         return query("select * from " + docType + " order by date desc");
     }
@@ -116,7 +124,7 @@ public class ContentStore {
     public List<ODocument> getAllTagsFromPublishedPosts() {
         return query("select tags from post where status='published'");
     }
-
+    
     public List<ODocument> getSignaturesForTemplates() {
         return query("select sha1 from Signatures where key='templates'");
     }

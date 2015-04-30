@@ -95,9 +95,9 @@ public class LiquidTemplateEngine extends AbstractTemplateEngine {
                         return new Date();
                     }
 
+                    // support all document types at runtime
                     if (((String)key).contains("published_")) {
                         String docType = ((String)key).substring("published_".length(), ((String)key).length()-1);
-                        System.out.println("docType is" + docType);
                         return DocumentList.wrap(db.getPublishedContent(docType).iterator());
                     }
                 }
