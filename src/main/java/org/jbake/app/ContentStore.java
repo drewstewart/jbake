@@ -124,7 +124,7 @@ public class ContentStore {
     public List<ODocument> getAllTagsFromPublishedPosts() {
         return query("select tags from post where status='published'");
     }
-    
+
     public List<ODocument> getSignaturesForTemplates() {
         return query("select sha1 from Signatures where key='templates'");
     }

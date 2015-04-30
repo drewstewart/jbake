@@ -88,13 +88,37 @@ Note that templates only need to be changed when updating the documentation outp
 
 ### Liquid syntax
 
-# Adding a new document type
+## Adding a new document type
 
-Document types are used to determine which template is used to render a markdown file. Additionally, types implicitly create categories that templates like index.liquid can use to output all the links to documents of type "interface-specification" for example.
+The `type` field in the markdown metadata header determines which template is used to render the content. Additionally, types implicitly create categories that templates such as index.liquid can use to output all the links to documents of a particular type; for example "interface-specification".
 
-# Customising the markdown html output
+You can specify a document's type to be anything in the metadata header (it just a key-value store) but a document will only be rendered if there is a corresponding template defined for that type. To add a new document type edit `jbake.properties` in the `ib2b-documentation` path and create an entry for the new type specifying the template file to be used. Here's an example properties file adding the type 'archive':
 
-In the `org.jbake.parser` package there is the `MarkdownEngine` class. It contains an inner class `MyHtmlSerializer` - this is where you override the `public void visit(NodeType node)` method to customise how each node is rendered to html. For example:
+```
+site.host=http://jbake.org
+render.tags=false
+render.sitemap=true
+template.index.file=index.liquid
+template.tag.file=tags.liquid
+template.sitemap.file=sitemap.liquid
+template.page.file=page.liquid
+template.interface-specification.file=interface-specification.liquid
+template.archive.file=archive.liquid
+```
+
+In your liquid templates you can do a lookup for all published documents of a particular type using 'published_<document type>s' (yes, thats pluralised). For example:
+
+```
+{% for doc in published_archives %}
+    {{ item.title }}
+{% endfor %}
+```
+
+## Customising the markdown html output
+
+In the `org.jbake.parser` package there is the `MarkdownEngine` class. It contains an inner class `MyHtmlSerializer` - you can override the `public void visit(NodeType node)` method to customise how each node type is rendered to html. 
+
+For example:
 
 ```
 // Override how Tables are rendered

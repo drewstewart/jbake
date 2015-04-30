@@ -127,8 +127,8 @@ public class Oven {
                 clearCacheIfNeeded(db);
 
                 // process source content
+                // runs the markdown parser
                 Crawler crawler = new Crawler(db, source, config);
-                System.out.println("crawling");
                 crawler.crawl(contentsPath);
 
                 LOGGER.info("Pages : {}", crawler.getPageCount());
@@ -136,6 +136,7 @@ public class Oven {
 
                 Renderer renderer = new Renderer(db, destination, templatesPath, config);
 
+                // render all the found doctypes from /content
                 for (String docType : DocumentTypes.getDocumentTypes()) {
                         for (ODocument document: db.getUnrenderedContent(docType)) {
                                 try {
@@ -147,7 +148,7 @@ public class Oven {
                         }
                 }
 
-                // write index file
+                // write index file. renders /templates/index.liquid
                 if (config.getBoolean(Keys.RENDER_INDEX)) {
                         try {
                                 renderer.renderIndex(config.getString(Keys.INDEX_FILE));
